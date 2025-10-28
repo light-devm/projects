@@ -1,0 +1,130 @@
+:root {
+  --font-heading: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+html,
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: black;
+  margin: 0;
+  padding: 0;
+  background: #f6f8fb;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+a,
+button,
+input,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* Page border section */
+.page-border {
+  max-width: 1100px; /* keeps content readable on large screens */
+  margin: 2rem auto; /* centered with breathing room */
+  padding: 0rem; /* inner spacing */
+  border: 3px solid black; /* visible rectangular border */
+  border-radius: 6px; /* slight rounding for polish (optional) */
+  background: white; /* ensure white background inside border */
+  box-shadow: 0 6px 20px rgba(11, 118, 255, 0.08); /* subtle shadow */
+}
+
+/* Utility: content wrapper inside the bordered section */
+.page-border .centered-content {
+  display: block;
+  text-align: center;
+}
+
+/* Two-column layout wrapper for adjacent page-border sections */
+.borders-row {
+  display: grid;
+  grid-template-columns: 1fr; /* stacked on small screens */
+  gap: 1rem; /* space between the bordered sections */
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* On larger screens show two columns */
+@media (min-width: 900px) {
+  .borders-row {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* Reduce individual page-border max width and margin when inside the row */
+  .borders-row .page-border {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.buttons button,
+.buttons [role="button"],
+.buttons a {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* keep a visible focus ring for accessibility */
+.buttons button:focus,
+.buttons [role="button"]:focus,
+.buttons a:focus {
+  outline: 2px solid rgba(11, 118, 255, 0.25);
+  outline-offset: 2px;
+}
+
+.projects {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 5px;
+}
+
+.graytext {
+  padding: 0;
+  margin: 0;
+  color: gray;
+  line-height: 0;
+  padding-bottom: 25px;
+}
+
+.content{
+  display: block;
+  padding-top: 2%;
+  padding-inline:3%;
+}
